@@ -124,7 +124,7 @@ CASE
 END as RealPremise,
 ```
 
-**Adding derived columns for order frequency metrics**
+**Adding derived columns for order frequency metrics. Allows flagging of new accounts and accounts buying new SKUs.**
 ```sql
 ,ROW_NUMBER() OVER(PARTITION BY Cuskey ORDER BY COH.SalesDate) as RowNumCus
 ,ROW_NUMBER() OVER(PARTITION BY COH.Cuskey, COH.ItemName ORDER BY COH.SalesDate) as RowNumSKU
