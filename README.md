@@ -106,6 +106,16 @@ WHEN NOT MATCHED THEN
 ......
 ```
 
+**Adding derived columns**
+```
+,ROW_NUMBER() OVER(PARTITION BY Cuskey ORDER BY COH.SalesDate) as RowNumCus
+,ROW_NUMBER() OVER(PARTITION BY COH.Cuskey, COH.ItemName ORDER BY COH.SalesDate) as RowNumSKU
+,LAG(COH.SalesDate) OVER(PARTITION BY COH.Cuskey ORDER BY COH.SalesDate) as PreviousOrderDateCus
+,LAG(COH.SalesDate) OVER(PARTITION BY COH.Cuskey, COH.ItemName ORDER BY COH.SalesDate) as PreviousOrderDateSKU
+,MIN(COH.SalesDate) OVER(PARTITION BY COH.Cuskey) as FirstOrderCus
+,MIN(COH.SalesDate) OVER(PARTITION BY COH.Cuskey, COH.ItemName) as FirstOrderSKU
+```
+
 Built a Python-based HubSpot API integration to pull current company records and properties into SQL Server on a scheduled basis.
 
 Created SQL views to reconcile order data with CRM company records and identify mismatches and enrichment gaps.
