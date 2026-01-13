@@ -85,6 +85,7 @@ Implemented automated CSV ingestion of distributor order data via email-triggere
 
 Maintained a RawOrders table to preserve all inbound distributor data and a CleanOrders table applying custom business logic, schema normalization, and derived metrics.
 
+Created SQL views to reconcile order data with CRM company records and identify mismatches and enrichment gaps.
 **Merging logic to prevent duplicate records**
 ```
 BULK INSERT [dbo].[BulkOrders]
@@ -134,8 +135,6 @@ END as RealPremise,
 ```
 
 Built a Python-based HubSpot API integration to pull current company records and properties into SQL Server on a scheduled basis.
-
-Created SQL views to reconcile order data with CRM company records and identify mismatches and enrichment gaps.
 
 Pushed curated company updates back to HubSpot to maintain a single source of truth across systems.
 
