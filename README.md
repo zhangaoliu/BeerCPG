@@ -148,6 +148,6 @@ Sales activity: Historical sales outreach showed high variability across reps. N
 # Recommendations
 Reduce CRM complexity- sales reps should only use HubSpot for meeting activities to eliminate need for integration and managing multiple apps. Reduce MMC licenses down to 1, saving ~$10k/year. One MMC superuser can perform all territory and mapping tasks
 
-Set ambitious but reasonable expectations for rep activity. Incentives for meeting standards
+Set ambitious but reasonable expectations for rep activity. Incentives for exceeding targets.
 
 Aggressively market newer SKUs to capitalize on shifting consumer preferences and grow those points of distribution.
