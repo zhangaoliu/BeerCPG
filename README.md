@@ -86,7 +86,7 @@ Implemented automated CSV ingestion of distributor order data via email-triggere
 Maintained a RawOrders table to preserve all inbound distributor data and a CleanOrders table applying custom business logic, schema normalization, and derived metrics.
 
 **Merging logic to prevent duplicate records**
-'''
+```
 BULK INSERT [dbo].[BulkOrders]
 FROM 'MergeTheseOrders.csv'
 WITH (
@@ -104,7 +104,7 @@ AND Target.[Cases] = Source.[Cases] -- Matching on Cases
 WHEN NOT MATCHED THEN
     INSERT (
 ......
-'''
+```
 
 Built a Python-based HubSpot API integration to pull current company records and properties into SQL Server on a scheduled basis.
 
