@@ -86,7 +86,7 @@ Implemented automated CSV ingestion of distributor order data via email-triggere
 Maintained a RawOrders table to preserve all inbound distributor data and a CleanOrders table applying custom business logic, schema normalization, and derived metrics.
 
 **Merging logic to prevent duplicate records**
-'''sql
+'''
 BULK INSERT [dbo].[BulkOrders]
 FROM 'MergeTheseOrders.csv'
 WITH (
