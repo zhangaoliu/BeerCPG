@@ -83,10 +83,6 @@ As a result, sales operations and leadership were forced to prioritize data prep
 # Methods
 Implemented automated CSV ingestion of distributor order data via email-triggered Azure Logic Apps. Files are written to Azure Blob Storage and processed by a SQL Server stored procedure.
 
-Maintained a RawOrders table to preserve all inbound distributor data and a CleanOrders table applying custom business logic, schema normalization, and derived metrics.
-
-Created SQL views to reconcile order data with CRM company records and identify mismatches and enrichment gaps.
-
 **Merging logic to prevent duplicate records**
 ```sql
 BULK INSERT [dbo].[BulkOrders]
@@ -107,6 +103,9 @@ WHEN NOT MATCHED THEN
     INSERT (
 ......
 ```
+Maintained a RawOrders table to preserve all inbound distributor data and a CleanOrders table applying custom business logic, schema normalization, and derived metrics.
+
+Created SQL views to reconcile order data with CRM company records and identify mismatches and enrichment gaps.
 
 **Cleaning and reconciling conflicting propertiess**
 ```sql
