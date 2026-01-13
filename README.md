@@ -140,7 +140,7 @@ SKU mix: The original launch flavor is starting to be outperformed by another, s
 
 ![sales by flavor](salesbyflavor.jpg)
 
-Sales activity: Historical sales outreach showed high variability across reps. New reps demonstrated initial enthusiasm early in the year. Introducing minimum activity benchmarks, combined with reduced administrative overhead, increased monthly outreach volume by 50%+.
+Sales activity: Historical sales outreach showed high variability across reps. New reps demonstrated initial enthusiasm early in the year. Introducing minimum activity benchmarks, combined with reduced administrative overhead, increased monthly outreach volume by 50%+, allowing reps to overperform their target.
 
 ![rep activity growth](rep_activity_growth.jpg)
 
