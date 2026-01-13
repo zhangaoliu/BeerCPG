@@ -136,7 +136,7 @@ Pushed curated company updates back to HubSpot to maintain a single source of tr
 # Insights
 Sales concentration: A small, consistent subset of accounts drives a disproportionate share of revenue, indicating a clear Protect/Grow account segment.
 
-SKU mix: The original launch flavor is starting to be outperformed by another, suggesting shifting customer preferences. Newer flavors gaining traction. Growth in flavor W largely contributed by one SKU.
+SKU mix: The original launch flavor is starting to be outperformed by another, suggesting shifting customer preferences. Newer flavors gaining traction. Growth in flavor W largely contributed by one SKU, indicating a path for focused growth.
 
 ![sales by flavor](salesbyflavor.jpg)
 
