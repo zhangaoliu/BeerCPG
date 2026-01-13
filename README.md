@@ -86,6 +86,7 @@ Implemented automated CSV ingestion of distributor order data via email-triggere
 Maintained a RawOrders table to preserve all inbound distributor data and a CleanOrders table applying custom business logic, schema normalization, and derived metrics.
 
 Created SQL views to reconcile order data with CRM company records and identify mismatches and enrichment gaps.
+
 **Merging logic to prevent duplicate records**
 ```
 BULK INSERT [dbo].[BulkOrders]
