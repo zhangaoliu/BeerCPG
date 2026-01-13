@@ -106,7 +106,7 @@ WHEN NOT MATCHED THEN
 ......
 ```
 
-**Adding derived columns**
+**Adding derived columns for order frequency metrics**
 ```
 ,ROW_NUMBER() OVER(PARTITION BY Cuskey ORDER BY COH.SalesDate) as RowNumCus
 ,ROW_NUMBER() OVER(PARTITION BY COH.Cuskey, COH.ItemName ORDER BY COH.SalesDate) as RowNumSKU
