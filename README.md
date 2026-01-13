@@ -88,7 +88,7 @@ Maintained a RawOrders table to preserve all inbound distributor data and a Clea
 Created SQL views to reconcile order data with CRM company records and identify mismatches and enrichment gaps.
 
 **Merging logic to prevent duplicate records**
-```
+```sql
 BULK INSERT [dbo].[BulkOrders]
 FROM 'MergeTheseOrders.csv'
 WITH (
@@ -109,7 +109,7 @@ WHEN NOT MATCHED THEN
 ```
 
 **Cleaning and reconciling conflicting propertiess**
-```
+```sql
 CASE WHEN N.[CusName] like '%Sample%' then 1 else 0 end as Sample,
 CASE 
     WHEN N.[SrsPremiseType] like 'Off%' and N.[Package] like 'KEG%' then 'Y'
@@ -126,7 +126,7 @@ END as RealPremise,
 ```
 
 **Adding derived columns for order frequency metrics**
-```
+```sql
 ,ROW_NUMBER() OVER(PARTITION BY Cuskey ORDER BY COH.SalesDate) as RowNumCus
 ,ROW_NUMBER() OVER(PARTITION BY COH.Cuskey, COH.ItemName ORDER BY COH.SalesDate) as RowNumSKU
 ,LAG(COH.SalesDate) OVER(PARTITION BY COH.Cuskey ORDER BY COH.SalesDate) as PreviousOrderDateCus
