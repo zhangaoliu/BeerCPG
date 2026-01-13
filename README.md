@@ -106,6 +106,23 @@ WHEN NOT MATCHED THEN
 ......
 ```
 
+**Cleaning and reconciling conflicting propertiess**
+```
+CASE WHEN N.[CusName] like '%Sample%' then 1 else 0 end as Sample,
+CASE 
+    WHEN N.[SrsPremiseType] like 'Off%' and N.[Package] like 'KEG%' then 'Y'
+    WHEN HL.[Rotator_Y_N] is null then 'Y'
+    ELSE HL.[Rotator_Y_N] 
+end as Rotator,
+CASE
+    WHEN N.[SrsPremiseType] like 'Off%' and N.[Package] like 'KEG%' then 'ON'
+    WHEN N.[SrsPremiseType] like 'Off%' then 'OFF'
+    WHEN N.[SrsPremiseType] like 'On%' then 'ON' 
+    WHEN N.[SrsPremiseType] is null and HL.[Premise_Type] like 'On%' then 'ON'
+    WHEN N.[SrsPremiseType] is null and HL.[Premise_Type] like 'Off%' then 'OFF'
+END as RealPremise,
+```
+
 **Adding derived columns for order frequency metrics**
 ```
 ,ROW_NUMBER() OVER(PARTITION BY Cuskey ORDER BY COH.SalesDate) as RowNumCus
